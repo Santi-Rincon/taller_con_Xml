@@ -1,3 +1,4 @@
+package co.edu.uptc.model;
 public class Product {
     private String productId;
     private String description;
