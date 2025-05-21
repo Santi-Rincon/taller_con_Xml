@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<orders>
+    <order>
+        <orderId>ORD001</orderId>
+        <creationDate>2025-05-21</creationDate>
+        <status>En proceso</status>
+        <customerId>1002457896</customerId>
+        <productIds>
+            <productId>001</productId>
+            <productId>002</productId>
+            <productId>003</productId>
+        </productIds>
+    </order>
+
+    <order>
+        <orderId>ORD002</orderId>
+        <creationDate>2025-05-20</creationDate>
+        <status>Enviado</status>
+        <customerId>1098765432</customerId>
+        <productIds>
+            <productId>002</productId>
+            <productId>008</productId>
+        </productIds>
+    </order>
+
+    <order>
+        <orderId>ORD003</orderId>
+        <creationDate>2025-05-19</creationDate>
+        <status>Entregado</status>
+        <customerId>1098755432</customerId>
+        <productIds>
+            <productId>003</productId>
+        </productIds>
+    </order>
+</orders>

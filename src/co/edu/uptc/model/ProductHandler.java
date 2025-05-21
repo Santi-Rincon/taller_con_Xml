@@ -51,7 +51,7 @@ public class ProductHandler extends DefaultHandler {
             bPresentation = false;
         }
 
-        if (qName.equalsIgnoreCase("Product")) {
+        if (qName.equalsIgnoreCase("product")) {
             productList.add(product);
         }
     }
