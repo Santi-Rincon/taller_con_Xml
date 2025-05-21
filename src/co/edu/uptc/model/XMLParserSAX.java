@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
-
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -18,6 +17,8 @@ public class XMLParserSAX {
         System.out.println("===== MENÚ =====");
         System.out.println("1. Ver productos");
         System.out.println("2. Ver envíos");
+        System.out.println("3. Ver clientes");
+        System.out.println("4. Ver pedidos");
         System.out.print("Seleccione una opción: ");
         int opcion = scanner.nextInt();
 
@@ -53,6 +54,27 @@ public class XMLParserSAX {
                                            shipping.getDate());
                     }
                     break;
+
+
+
+
+
+                case 4:
+                    OrderHandler handler = new OrderHandler();
+                    saxParser.parse(new File("src\\data\\orders.xml"), handler);
+                    List<Order> orderList = handler.getOrderList();
+
+                    System.out.println("\n--- Lista de Pedidos ---");
+                    for (Order order : orderList) {
+                        System.out.println(order.getOrderId() + " - " + 
+                                        order.getCreationDate() + " - " +
+                                        order.getStatus() + " - " +
+                                        order.getCustomerId() + " - " +
+                                        order.getProductIds());                                  
+                    }
+                    break;
+
+                
 
                 default:
                     System.out.println("Opción inválida.");
