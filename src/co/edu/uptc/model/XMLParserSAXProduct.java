@@ -19,7 +19,7 @@ public class XMLParserSAXProduct {
             SAXParser saxParser = saxParserFactory.newSAXParser();
             ProductHandler handler = new ProductHandler();
             
-            saxParser.parse(new File("src\\data\\products.xml"), handler);
+            saxParser.parse(new File("src/data/products.xml"), handler);
 
             // Obtener lista de productos
             List<Product> productList = handler.getProductList();
