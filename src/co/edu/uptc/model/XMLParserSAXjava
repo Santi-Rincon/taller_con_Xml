@@ -1,0 +1,38 @@
+package co.edu.uptc.model;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+import org.xml.sax.SAXException;
+
+
+public class XMLParserSAXProduct {
+
+    public static void main(String[] args) {
+
+        
+        SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
+        try {
+            SAXParser saxParser = saxParserFactory.newSAXParser();
+            ProductHandler handler = new ProductHandler();
+            
+            saxParser.parse(new File("src\\data\\products.xml"), handler);
+
+            // Obtener lista de productos
+            List<Product> productList = handler.getProductList();
+
+            // Imprimir información
+            for (Product product : productList) {
+                System.out.println(product.getProductId() + " - " + 
+                                   product.getDescription() + " - " + 
+                                   product.getPresentation());
+            }
+
+        } catch (ParserConfigurationException | SAXException | IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
