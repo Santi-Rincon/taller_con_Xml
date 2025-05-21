@@ -12,22 +12,26 @@ import org.xml.sax.SAXException;
 public class XMLParserSAX {
 
     public static void main(String[] args) {
-
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("===== MENÚ =====");
-        System.out.println("1. Ver productos");
-        System.out.println("2. Ver envíos");
-        System.out.println("3. Ver clientes");
-        System.out.println("4. Ver pedidos");
-        System.out.print("Seleccione una opción: ");
-        int opcion = scanner.nextInt();
-
+      
         SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
 
         try {
             SAXParser saxParser = saxParserFactory.newSAXParser();
+            int opcion = 0;
 
-            switch (opcion) {
+            do { 
+                Scanner scanner = new Scanner(System.in);
+                System.out.println();
+                System.out.println("===== MENÚ =====");
+                System.out.println("1. Ver productos");
+                System.out.println("2. Ver envíos");
+                System.out.println("3. Ver clientes");
+                System.out.println("4. Ver pedidos");
+                
+                System.out.print("Seleccione una opción: ");
+                opcion = scanner.nextInt();
+
+                switch (opcion) {
                 case 1:
                     ProductHandler productHandler = new ProductHandler();
                     saxParser.parse(new File("src\\data\\products.xml"), productHandler);
@@ -56,9 +60,6 @@ public class XMLParserSAX {
                     break;
 
 
-
-
-
                 case 4:
                     OrderHandler handler = new OrderHandler();
                     saxParser.parse(new File("src\\data\\orders.xml"), handler);
@@ -73,12 +74,17 @@ public class XMLParserSAX {
                                         order.getProductIds());                                  
                     }
                     break;
-
                 
-
+                case 5:
+                    System.out.println("Saliendo del programa...");
+                    break;
+                    
+            
                 default:
                     System.out.println("Opción inválida.");
-            }
+                }
+            } while (opcion != 5);
+            
 
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
