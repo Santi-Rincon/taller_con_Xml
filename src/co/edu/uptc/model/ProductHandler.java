@@ -2,7 +2,6 @@ package co.edu.uptc.model;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -24,7 +23,7 @@ public class ProductHandler extends DefaultHandler {
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
 
-        if (qName.equalsIgnoreCase("Product")) {
+        if (qName.equalsIgnoreCase("product")) {
             String id = attributes.getValue("productId");
             product = new Product();
             product.setProductId(id);

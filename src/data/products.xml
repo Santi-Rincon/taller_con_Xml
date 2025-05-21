@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <products>
-    <Product productId="001">
-    <description>Producto X</description>
-    <presentation>Caja</presentation>
-</Product>
-    <Product productId="002">
-    <description>Producto z</description>
-    <presentation>Empaque</presentation>
-</Product>
-   <Product productId="003">
-    <description>Producto D</description>
-    <presentation>Caja</presentation>
-</Product>
+    <product productId="001">
+        <description>Producto X</description>
+        <presentation>Caja</presentation>
+    </product>
+    <product productId="002">
+        <description>Producto z</description>
+        <presentation>Empaque</presentation>
+    </product>
+    <product productId="003">
+        <description>Producto D</description>
+        <presentation>Caja</presentation>
+    </product>
 </products>
