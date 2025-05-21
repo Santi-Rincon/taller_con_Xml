@@ -25,12 +25,11 @@ public class ShippingHandler extends DefaultHandler {
     
         if (shippingList == null) {
             shippingList = new ArrayList<>();
-        }
-     else if (qName.equalsIgnoreCase("id")) {
+        }else if (qName.equalsIgnoreCase("id")) {
         bId = true;
-    } else if (qName.equalsIgnoreCase("nameTransport")) {
+        } else if (qName.equalsIgnoreCase("nameTransport")) {
         bNameTransport = true;
-    } else if (qName.equalsIgnoreCase("status")) {
+        } else if (qName.equalsIgnoreCase("status")) {
         bStatus = true;
         } else if (qName.equalsIgnoreCase("date")) {
             bDate = true;
@@ -60,5 +59,9 @@ public class ShippingHandler extends DefaultHandler {
         }
     }
 
+    @Override
+    public void characters(char[] ch, int start, int length) throws SAXException {
+        data.append(new String(ch, start, length));
+    }
     
 }
