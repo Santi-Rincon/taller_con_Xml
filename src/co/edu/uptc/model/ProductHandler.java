@@ -8,9 +8,9 @@ import org.xml.sax.helpers.DefaultHandler;
 
 public class ProductHandler extends DefaultHandler {
 
-    private List<Product> productList = null;
-    private Product product = null;
-    private StringBuilder data = null;
+    private List<Product> productList ;
+    private Product product ;
+    private StringBuilder data ;
 
     // Get lista de productos
     public List<Product> getProductList() {

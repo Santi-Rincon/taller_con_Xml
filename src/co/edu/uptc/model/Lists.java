@@ -36,7 +36,7 @@ public class Lists {
         orders[0].setCreationDate("2025-05-21");
         orders[0].setStatus("Processing");
         orders[0].setCustomerId("C001");
-        orders[0].setProductIds(List.of("P001")); // necesitas importar java.util.List
+        orders[0].setProductIds(List.of("P001")); 
 
         // Ejemplo de inicialización de un Shipping
         shippings[0] = new Shipping();
