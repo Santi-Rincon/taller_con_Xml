@@ -3,12 +3,14 @@ package co.edu.uptc.model;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.Scanner;
+
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import org.xml.sax.SAXException;
 
-public class XMLParserSAXProduct {
+public class XMLParserSAX {
 
     public static void main(String[] args) {
 
@@ -40,7 +42,7 @@ public class XMLParserSAXProduct {
 
                 case 2:
                     ShippingHandler shippingHandler = new ShippingHandler();
-                    saxParser.parse(new File("src\\data\\shipping.xml"), shippingHandler);
+                    saxParser.parse(new File("src\\data\\shippings.xml"), shippingHandler);
                     List<Shipping> shippingList = shippingHandler.getShippingList();
 
                     System.out.println("\n--- Lista de Envíos ---");
