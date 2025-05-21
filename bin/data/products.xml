@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+    <product>
+        <productId>001</productId>
+        <description>Leche Entera</description>
+        <presentation>Litros</presentation>
+    </product>
+    <product>
+        <productId>002</productId>
+        <description>Leche Entera</description>
+        <presentation>Onzas</presentation>
+    </product>
+    <product>
+        <productId>003</productId>
+        <description>Azúcar Refinada</description>
+        <presentation>Kilos</presentation>
+    </product>
+</products>
