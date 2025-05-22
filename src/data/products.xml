@@ -20,4 +20,12 @@
         <description>2</description>
         <presentation>2</presentation>
     </product>
+    <product productId="1">
+        <description>1</description>
+        <presentation>1</presentation>
+    </product>
+    <product productId="1">
+        <description>1</description>
+        <presentation>1</presentation>
+    </product>
 </products>

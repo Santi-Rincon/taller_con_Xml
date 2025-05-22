@@ -4,6 +4,7 @@ package co.edu.uptc.runner;
 import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
 
+import co.edu.uptc.model.CrearPorTeclado;
 import co.edu.uptc.model.ProductXMLUpdater;
 import co.edu.uptc.model.XMLParserSAX;
 
@@ -42,7 +43,8 @@ public class Run {
                     break;
 
                 case 2:
-                    productUpdater.agregarProductosDesdeTeclado();
+                    CrearPorTeclado crearPorTeclado = new CrearPorTeclado();
+                    crearPorTeclado.iniciarMenu();
                     break;
 
                 case 3:
