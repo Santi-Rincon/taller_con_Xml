@@ -47,7 +47,7 @@ public class XMLParserSAX {
 
                 case 2:
                     ShippingHandler shippingHandler = new ShippingHandler();
-                    saxParser.parse(new File("src\\data\\shippings.xml"), shippingHandler);
+                    saxParser.parse(new File("src/data/shippings.xml"), shippingHandler);
                     List<Shipping> shippingList = shippingHandler.getShippingList();
 
                     System.out.println("\n--- Lista de Envíos ---");

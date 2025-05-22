@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<shuppings>
-    <shupping>
+<shippings>
+    <shipping>
         <id>1</id>
         <nameTransport>Servientrega</nameTransport>
         <status>En camino</status>
         <date>2025-05-22</date>
-    </shupping>
-    <shupping>
-        <id>1</id>
+    </shipping>
+    <shipping>
+        <id>2</id>
         <nameTransport>Servientrega</nameTransport>
         <status>En camino</status>
         <date>2025-05-23</date>
-    </shupping>
-     <shupping>
-        <id>1</id>
+    </shipping>
+    <shipping>
+        <id>3</id>
         <nameTransport>Servientrega</nameTransport>
         <status>En camino</status>
         <date>2025-05-23</date>
-    </shupping>
-</shuppings>
+    </shipping>
+</shippings>
