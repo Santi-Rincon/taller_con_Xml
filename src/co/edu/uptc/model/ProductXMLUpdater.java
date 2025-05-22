@@ -9,9 +9,12 @@ import java.io.File;
 import java.util.Scanner;
 
 public class ProductXMLUpdater {
-    public static void main(String[] args) {
+
+    private File xmlFile = new File("src/data/products.xml");
+
+    // Método para agregar productos desde teclado
+    public void agregarProductosDesdeTeclado() {
         Scanner scanner = new Scanner(System.in);
-        File xmlFile = new File("src/data/products.xml");
 
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -34,6 +37,8 @@ public class ProductXMLUpdater {
             scanner.nextLine(); // limpiar buffer
 
             for (int i = 0; i < cantidad; i++) {
+                System.out.println("\nProducto " + (i + 1) + ":");
+
                 Element product = doc.createElement("product");
 
                 System.out.print("ID del producto: ");
@@ -45,7 +50,6 @@ public class ProductXMLUpdater {
                 System.out.print("Presentación: ");
                 String presentation = scanner.nextLine();
 
-                // ID como atributo productId
                 product.setAttribute("productId", id);
 
                 Element descElem = doc.createElement("description");
@@ -60,15 +64,12 @@ public class ProductXMLUpdater {
                 root.appendChild(product);
             }
 
-            // Limpiar nodos de texto con sólo espacios para evitar indentación mixta
             removeWhitespaceNodes(root);
 
-            // Configurar Transformer para salida indentada
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
-            
+
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-            // Para que la indentación sea de 4 espacios (esto depende del procesador XSLT)
             transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
 
             DOMSource source = new DOMSource(doc);
@@ -79,13 +80,11 @@ public class ProductXMLUpdater {
 
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            scanner.close();
         }
     }
 
     // Función para eliminar nodos de texto vacíos (sólo espacios y saltos)
-    private static void removeWhitespaceNodes(Element e) {
+    private void removeWhitespaceNodes(Element e) {
         NodeList children = e.getChildNodes();
         for (int i = children.getLength() - 1; i >= 0; i--) {
             Node child = children.item(i);
