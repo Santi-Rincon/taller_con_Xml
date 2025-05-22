@@ -31,7 +31,8 @@ public class CrearPorTeclado {
                     break;
 
                 case 2:
-                    System.out.println("Funcionalidad de envíos aún no implementada.");
+                    ShippingXMLupdater shippingUpdater = new ShippingXMLupdater();
+                    shippingUpdater.agregarShippingsDesdeTeclado();
                     break;
 
                 case 3:
@@ -40,7 +41,8 @@ public class CrearPorTeclado {
                     break;
 
                 case 4:
-                    System.out.println("Funcionalidad de pedidos aún no implementada.");
+                    OrderXMLUpdater orderUpdater = new OrderXMLUpdater();
+                    orderUpdater.agregarOrdersDesdeTeclado();
                     break;
 
                 case 5:
