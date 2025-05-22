@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <products>
     <product productId="001">
         <description>Producto X</description>
@@ -11,5 +11,9 @@
     <product productId="003">
         <description>Producto D</description>
         <presentation>Caja</presentation>
+    </product>
+    <product productId="1">
+        <description>1</description>
+        <presentation>1</presentation>
     </product>
 </products>

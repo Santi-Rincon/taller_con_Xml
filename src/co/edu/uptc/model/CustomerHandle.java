@@ -8,8 +8,8 @@ import org.xml.sax.helpers.DefaultHandler;
 
 public class CustomerHandle extends DefaultHandler {
 
-    private Customer customer = null;
     private List<Customer> customerList = null;
+    private Customer customer = null;
     private StringBuilder data = null;
 
     // Get lista de productos
@@ -24,7 +24,10 @@ public class CustomerHandle extends DefaultHandler {
 
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-        data = new StringBuilder();
+        
+        if(customerList == null){
+            customerList = new ArrayList<>();
+        }
 
         if (qName.equalsIgnoreCase("customer")) {
             customer = new Customer();
@@ -37,6 +40,8 @@ public class CustomerHandle extends DefaultHandler {
         } else if (qName.equalsIgnoreCase("email")) {
             bemail = true;
         }
+
+        data = new StringBuilder();
     }
     
     @Override
@@ -64,6 +69,6 @@ public class CustomerHandle extends DefaultHandler {
     public void characters(char[] ch, int start, int length) throws SAXException {
         data.append(new String(ch, start, length));
     }
-    //tin
+    
     
 }

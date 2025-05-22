@@ -18,15 +18,17 @@ public class XMLParserSAX {
         try {
             SAXParser saxParser = saxParserFactory.newSAXParser();
             int opcion = 0;
+            Scanner scanner = new Scanner(System.in);
 
             do { 
-                Scanner scanner = new Scanner(System.in);
+                
                 System.out.println();
                 System.out.println("===== MENÚ =====");
                 System.out.println("1. Ver productos");
                 System.out.println("2. Ver envíos");
                 System.out.println("3. Ver clientes");
                 System.out.println("4. Ver pedidos");
+                System.out.println("5. Salir"); 
                 
                 System.out.print("Seleccione una opción: ");
                 opcion = scanner.nextInt();
@@ -34,7 +36,7 @@ public class XMLParserSAX {
                 switch (opcion) {
                 case 1:
                     ProductHandler productHandler = new ProductHandler();
-                    saxParser.parse(new File("src\\data\\products.xml"), productHandler);
+                    saxParser.parse(new File("src/data/products.xml"), productHandler);
                     List<Product> productList = productHandler.getProductList();
 
                     System.out.println("\n--- Lista de Productos ---");
@@ -59,10 +61,24 @@ public class XMLParserSAX {
                     }
                     break;
 
+                case 3:
+                    CustomerHandle customerHandler = new CustomerHandle();
+                    saxParser.parse(new File("src/data/customer.xml"), customerHandler);
+                    List<Customer> customerList = customerHandler.getCustomerList();
+
+                    System.out.println("\n--- Lista de Clientes ---");
+                    for (Customer customer : customerList) {
+                        System.out.println(customer.getId() + " - " +
+                                           customer.getAddress() + " - " +
+                                           customer.getPhone() + " - " +
+                                           customer.getEmail());
+                    }
+                    break;
+
 
                 case 4:
                     OrderHandler handler = new OrderHandler();
-                    saxParser.parse(new File("src\\data\\orders.xml"), handler);
+                    saxParser.parse(new File("src/data/orders.xml"), handler);
                     List<Order> orderList = handler.getOrderList();
 
                     System.out.println("\n--- Lista de Pedidos ---");

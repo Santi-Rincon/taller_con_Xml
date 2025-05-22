@@ -12,4 +12,11 @@
         <phone>3121234567</phone>
         <email>cliente2@correo.com</email>
     </customer>
+
+    <customer>
+        <id>que pasa bala</id>
+        <address>Carrera 10 # 55-12, Belen</address>
+        <phone>3121234567</phone>
+        <email>tin@correo.com</email>
+    </customer>
 </customers>
